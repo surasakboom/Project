@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Title Page</title>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="css/login-register.css">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <script type="text/javascript" src="js/angular.min.js"></script>
+        <script type="text/javascript" src="js/angular-cookies.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/registerCtrl.js"></script>
+    </head>
+    <body ng-app="myapp" ng-controller="registerCtrl">
+        <!--
+        you can substitue the span of reauth email for a input with the email and
+        include the remember me checkbox
+        -->
+        <div class="container">
+            <div class="card card-container">
+                <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+                <h4 class="header">สำหรับอาจารย์</h3>
+                <label for="uplaod-image" id="img-upload">
+                    <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+                </label>
+                <input type="file" style="display:none" id="uplaod-image"  custom-on-change="uploadFile"/>
+                <p id="profile-name" class="profile-name-card"></p>
+                <form class="form-signin" id="form_signup" name="form_signup">
+                    <div class="radio-inline name-prefix">
+                      <label><input type="radio" name="prefix" value="นาย" required checked>นาย</label>
+                    </div>
+                    <div class="radio-inline name-prefix">
+                      <label><input type="radio" name="prefix" value="นางสาว" required >นางสาว</label>
+                    </div>
+                    <div class="radio-inline name-prefix">
+                      <label><input type="radio" name="prefix" value="นาง" required >นาง</label>
+                    </div>
+                    <input type="text" name="firstname" id="firstname" class="form-control" placeholder="ชื่อ" required autofocus ng-model="firstname">
+                    <input type="text"  name="lastname" id="lastname" class="form-control" placeholder="นามสกุล" required autofocus ng-model="lastname">
+                    <input type="text" name="shortname" id="shortname" class="form-control" placeholder="ชื่อย่อ" required autofocus ng-model="shortname">
+                    <input type="email" name="email" id="inputEmail" class="form-control" placeholder="อีเมลล์" required autofocus ng-model="email">
+                    <input type="text" name="username" id="username" class="form-control" placeholder="ชื่อผู้ใช้" required autofocus ng-model="username" ng-change="check_username()">
+                    <span id="reauth-email" class="reauth-email" ng-show="duplicate_username">{{duplicate_username}}</span>
+                    <input type="password" name="password" id="inputPassword" class="form-control" placeholder="รหัสผ่าน" required ng-model="password">
+                    <input type="password" id="reinputPassword" class="form-control" placeholder="รหัสผ่านอีกครั้ง" required ng-model="repassword" ng-change="match_password()">
+                    <span id="reauth-email" class="reauth-email" ng-show="error_msg">{{error_msg}}</span>
+                    <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" ng-click="teacher_register()">Sign up</button>
+                </form><!-- /form -->
+            </div><!-- /card-container -->
+        </div><!-- /container -->
+
+        <!-- jQuery -->
+        <script src="//code.jquery.com/jquery.js"></script>
+        <!-- Bootstrap JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    </body>
+</html>

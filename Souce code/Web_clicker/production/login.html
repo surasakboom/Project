@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Welcome | Clicker</title>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="css/login-register.css">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <script type="text/javascript" src="js/angular.min.js"></script>
+        <script type="text/javascript" src="js/angular-cookies.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/registerCtrl.js"></script>
+    </head>
+    <body ng-app="myapp" ng-controller="registerCtrl">
+        <!--
+        you can substitue the span of reauth email for a input with the email and
+        include the remember me checkbox
+        -->
+        <div class="container">
+            <div class="card card-container">
+                <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+                <img id="profile-img" class="profile-img-card" src="..\production\images\logo.jpg" />
+                <p id="profile-name" class="profile-name-card"></p>
+                <form class="form-signin" id="form-signin">
+                    <span id="reauth-email" class="reauth-email"></span>
+                    <input type="text" name="username" id="username" class="form-control" placeholder="username" required autofocus>
+                    <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                    <span id="reauth-email" class="reauth-email" ng-show="error_msg">{{error_msg}}</span>
+                    <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" ng-click="login()">Sign in</button>
+                </form><!-- /form -->
+                <button type="button" class="btn btn-lg btn-primary btn-block btn-signup">
+                    <a href="teacher-register.html">sign up for teacher</a>
+                </button>
+                <button type="button" class="btn btn-lg btn-primary btn-block btn-signup">
+                    <a href="student-register.html">sign up for student</a>
+                </button>
+                <br><br>
+                <a href="#" class="forgot-password">
+                    <!-- Forgot the password? -->
+                </a>
+            </div><!-- /card-container -->
+        </div><!-- /container -->
+
+        <!-- jQuery -->
+        <script src="//code.jquery.com/jquery.js"></script>
+        <!-- Bootstrap JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    </body>
+</html>
